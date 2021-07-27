@@ -10,7 +10,8 @@ endif
 
 SRC_PATH = ./src
 
-SRC_NAME =	main.c check.c\
+SRC_NAME =	main.c check.c sort.c\
+			swap.c\
 
 LIBFT = ./libft/libft.a
 
