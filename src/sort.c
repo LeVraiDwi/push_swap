@@ -34,3 +34,40 @@ void	ft_sort_tab(int *tab, int first, int last)
 		ft_sort_tab(tab, j + 1, last);
 	}
 }
+
+void	ft_dub_tab(t_pile *pile)
+{
+	int	i;
+
+	i = 0;
+	while (i < pile->l)
+	{
+		pile->b[i] = pile->a[i];
+		i++;
+	}
+	pile->lb = pile->l;
+}
+
+void	ft_convert_pile(t_pile *pile)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	ft_dub_tab(pile);
+	ft_sort_tab(pile->b, 0, pile->l - 1);
+	while (i < pile->l)
+	{
+		j = 0;
+		while (j < pile->l)
+		{
+			if (pile->a[i] == pile->b[j])
+			{
+				pile->a[i] = j;
+				j = pile->l;
+			}
+			j++;
+		}
+		i++;
+	}
+}

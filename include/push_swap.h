@@ -24,6 +24,8 @@ int		ft_is_double(int i, t_pile *pile);
 //sort.c
 void	ft_sort_tab(int *tab, int first, int last);
 void	ft_swap(int *tab, int i, int j);
+void	ft_dub_tab(t_pile *pile);
+void	ft_convert_pile(t_pile *pile);
 //swap.c
 int		swap(int *tab, int l);
 int		sa(t_pile *pile);
