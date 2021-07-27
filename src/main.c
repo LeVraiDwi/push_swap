@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 		return (ft_error(&pile));
 	if (!ft_is_list(argc, argv, &pile))
 		return (ft_error(&pile));
+	ft_convert_pile(&pile);
 	free(pile.a);
 	free(pile.b);
 	return (1);	
