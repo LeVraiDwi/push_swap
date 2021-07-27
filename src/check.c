@@ -34,7 +34,7 @@ int	ft_create_list(int argc, char **argv, t_pile *pile)
 	pile->b = (int *)malloc(sizeof(int) * argc - 1);
 	if (!pile->b)
 		return (0);
-	while (i < argc - 1)
+	while (i < pile->l)
 	{
 		l = ft_atoi(argv[i + 1]);
 		if (l <= HIGHT_INT && l >= LOW_INT)

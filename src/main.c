@@ -1,5 +1,25 @@
 #include "push_swap.h"
 
+void	ft_print_pile(t_pile *pile)
+{
+	int i;
+
+	i = 0;
+	printf("PILE A:\n");
+	while (i < pile->l)
+	{
+		printf("%d\n", pile->a[i]);
+		i++;
+	}
+	i = 0;
+	printf("PILE B:\n");
+	while (i < pile->lb)
+	{
+		printf("%d\n", pile->b[i]);
+		i++;
+	}
+}
+
 int	ft_error(t_pile *pile)
 {
 	if (pile->a != 0)
@@ -13,9 +33,7 @@ int	ft_error(t_pile *pile)
 int	main(int argc, char **argv)
 {
 	t_pile	pile;
-	int		i;
 
-	i = 0;
 	pile.a = 0;
 	pile.b = 0;
 	pile.lb = 0;
@@ -25,18 +43,9 @@ int	main(int argc, char **argv)
 		return (ft_error(&pile));
 	if (!ft_is_list(argc, argv, &pile))
 		return (ft_error(&pile));
-	while (i < argc - 1)
-	{
-		printf("%d\n", pile.a[i]);
-		i++;
-	}
-	ft_sort_tab(pile.a, 0, pile.l - 1);
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("%d\n", pile.a[i]);
-		i++;
-	}
+	ft_print_pile(&pile);
+	rra(&pile);
+	ft_print_pile(&pile);
 	free(pile.a);
 	free(pile.b);
 	return (1);	

@@ -11,7 +11,8 @@ endif
 SRC_PATH = ./src
 
 SRC_NAME =	main.c check.c sort.c\
-			swap.c\
+			swap.c push.c rotate.c\
+			reverse_rotate.c\
 
 LIBFT = ./libft/libft.a
 

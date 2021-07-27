@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int	swap(int *tab, int l)
 {
 	int	i;
