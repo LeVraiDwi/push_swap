@@ -6,6 +6,11 @@
 # include "libft.h"
 # define LOW_INT -2147483648
 # define HIGHT_INT 2147483647
+# define CASE_ONE 1
+# define CASE_TWO 2
+# define CASE_THREE 4
+# define CASE_FOUR 8
+# define CASE_FIVE 16
 
 typedef struct	s_pile
 {
@@ -13,6 +18,7 @@ typedef struct	s_pile
 	int	*b;
 	int	l;
 	int	lb;
+	int	size;
 }				t_pile;
 
 //check.c
@@ -44,4 +50,15 @@ int		reverse_rotate(int *tab, int l);
 int		rra(t_pile *pile);
 int		rrb(t_pile *pile);
 int		rrr(t_pile *pile);
+//radix.c
+int		ft_radix(t_pile *pile);
+//main.c
+int		ft_sort(t_pile *pile);
+void	ft_print_pile(t_pile *pile);
+//case.c
+int		is_sort(t_pile *pile);
+int		ft_case(t_pile *pile);
+//small_sort.c
+int		ft_small_sort(t_pile *pile);
+int		ft_medium_sort(t_pile *pile);
 #endif

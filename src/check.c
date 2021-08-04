@@ -82,5 +82,6 @@ int	ft_is_list(int argc, char **argv, t_pile *pile)
 		return (0);
 	if (!ft_no_double(pile))
 		return (0);
+	pile->size = pile->l;
 	return (1);
 }

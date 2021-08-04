@@ -70,4 +70,5 @@ void	ft_convert_pile(t_pile *pile)
 		}
 		i++;
 	}
+	pile->lb = 0;
 }

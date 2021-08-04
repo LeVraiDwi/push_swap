@@ -1,5 +1,22 @@
 #include "push_swap.h"
 
+int	ft_sort(t_pile *pile)
+{
+	if (is_sort(pile))
+		return (1);
+	if (pile->l <= 3)
+		ft_small_sort(pile);
+	else
+		ft_medium_sort(pile);
+/*	else if (pile->l > 5)
+		ft_radix(pile);
+	else if (pile->l < 3)
+		ft_small_sort(pile);
+	else
+		ft_medium_sort(pile);*/
+	return (1);
+}
+
 void	ft_print_pile(t_pile *pile)
 {
 	int i;
@@ -44,6 +61,8 @@ int	main(int argc, char **argv)
 	if (!ft_is_list(argc, argv, &pile))
 		return (ft_error(&pile));
 	ft_convert_pile(&pile);
+	ft_sort(&pile);
+//	ft_print_pile(&pile);
 	free(pile.a);
 	free(pile.b);
 	return (1);	
