@@ -4,7 +4,7 @@ int	rotate(int *tab, int l)
 {
 	int	i;
 	int	tmp;
-	
+
 	if (l < 2)
 		return (0);
 	tmp = tab[0];

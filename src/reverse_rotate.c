@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int reverse_rotate(int *tab, int l)
+int	reverse_rotate(int *tab, int l)
 {
 	int	i;
 	int	tmp;
@@ -22,7 +22,7 @@ int	rra(t_pile *pile)
 {
 	if (!reverse_rotate(pile->a, pile->l))
 		return (0);
-	write(1,"rra\n", 4);
+	write(1, "rra\n", 4);
 	return (1);
 }
 
@@ -30,7 +30,7 @@ int	rrb(t_pile *pile)
 {
 	if (!reverse_rotate(pile->b, pile->lb))
 		return (0);
-	write(1,"rrb\n", 4);
+	write(1, "rrb\n", 4);
 	return (1);
 }
 
@@ -40,6 +40,6 @@ int	rrr(t_pile *pile)
 		return (0);
 	if (!reverse_rotate(pile->b, pile->lb))
 		return (0);
-	write(1,"rrr\n", 4);
+	write(1, "rrr\n", 4);
 	return (1);
 }

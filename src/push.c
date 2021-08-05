@@ -2,7 +2,7 @@
 
 int	push(int *from, int *to, int lf, int lt)
 {
-	int i;
+	int	i;
 
 	i = lt - 1;
 	if (lf == 0)

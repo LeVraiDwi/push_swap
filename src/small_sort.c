@@ -4,48 +4,55 @@ int	ft_small_sort(t_pile *pile)
 {
 	int	flag;
 
-	flag  = ft_case(pile);
-	if (!flag)
-		return (0);
-	if (flag == CASE_ONE)
-		sa(pile);
-	else if (flag == CASE_TWO)
+	if (pile->l == 3)
 	{
-		sa(pile);
-		rra(pile);
+		flag = ft_case(pile);
+		if (!flag)
+			return (0);
+		ft_case_sort(pile, flag);
 	}
-	else if (flag == CASE_THREE)
-		ra(pile);
-	else if (flag == CASE_FOUR)
-	{
-		sa(pile);
-		ra(pile);
-	}
-	else if (flag == CASE_FIVE)
-		rra(pile);
+	else if (pile->l == 2)
+		ft_case_two(pile);
 	return (1);
 }
 
 void	ft_reverse_pick(t_pile *pile)
 {
-		while (pile->a[0] != 0)
-		{
-			if (pile->a[0] == 1)
-				pb(pile);
-			else
-				ra(pile);
-		}
+	while (pile->a[0] != 0)
+	{
+		if (pile->a[0] == 1)
+			pb(pile);
+		else
+			ra(pile);
+	}
 }
 
 void	ft_pick(t_pile *pile)
 {
-		while (pile->a[0] != 0)
-		{
-			if (pile->a[0] == 1)
-				pb(pile);
-			else
+	while (pile->a[0] != 0)
+	{
+		if (pile->a[0] == 1)
+			pb(pile);
+		else
+			rra(pile);
+	}
+}
+
+void	ft_rra_or_ra(t_pile *pile, int i)
+{
+	if (pile->lb != 0 && (pile->a[0] == pile->b[0] + 1
+			|| pile->a[pile->l - 1] == pile->b[0] - 1))
+	{
+		pa(pile);
+		if (pile->lb == 0 && i <= 2 && pile->b[0] >= 4)
+			while (!is_sort(pile))
 				rra(pile);
-		}
+	}
+	else
+	{
+		i++;
+		ra(pile);
+	}
 }
 
 void	ft_brute_sort(t_pile *pile)
@@ -64,18 +71,7 @@ void	ft_brute_sort(t_pile *pile)
 		sb(pile);
 	while (!is_sort(pile) || pile->lb != 0)
 	{
-		if (pile->lb != 0 && (pile->a[0] == pile->b[0] + 1 || pile->a[pile->l - 1] == pile->b[0] - 1))
-		{
-			pa(pile);
-			if (pile->lb == 0 && i <= 2)
-				while (!is_sort(pile))
-					rra(pile);
-		}
-		else
-		{
-			i++;
-			ra(pile);
-		}
+		ft_rra_or_ra(pile, i);
 	}
 }
 

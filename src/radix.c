@@ -1,6 +1,14 @@
 #include "push_swap.h"
 
-int ft_radix(t_pile *pile)
+void	ft_push_or_rotate(t_pile *pile, int i)
+{
+	if (((pile->a[0] >> i) & 1) == 1)
+		ra(pile);
+	else
+		pb(pile);
+}
+
+int	ft_radix(t_pile *pile)
 {
 	int	size_num;
 	int	max_bit;
@@ -17,10 +25,7 @@ int ft_radix(t_pile *pile)
 		j = 0;
 		while (j < pile->size)
 		{
-			if (((pile->a[0] >> i)&1) == 1)
-				ra(pile);
-			else
-				pb(pile);
+			ft_push_or_rotate(pile, i);
 			j++;
 		}
 		while (pile->lb != 0)

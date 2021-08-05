@@ -3,13 +3,33 @@
 int	is_sort(t_pile *pile)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < pile->l - 1 && pile->a[i] + 1 == pile->a[i + 1])
 		i++;
-	if (i == pile->l -1)
+	if (i == pile->l - 1)
 		return (1);
 	return (0);
+}
+
+void	ft_case_sort(t_pile *pile, int flag)
+{
+	if (flag == CASE_ONE)
+		sa(pile);
+	else if (flag == CASE_TWO)
+	{
+		sa(pile);
+		rra(pile);
+	}
+	else if (flag == CASE_THREE)
+		ra(pile);
+	else if (flag == CASE_FOUR)
+	{
+		sa(pile);
+		ra(pile);
+	}
+	else if (flag == CASE_FIVE)
+		rra(pile);
 }
 
 int	ft_case(t_pile *pile)
@@ -28,4 +48,10 @@ int	ft_case(t_pile *pile)
 	else if (a[2] < a[0] && a[0] < a[1])
 		return (CASE_FIVE);
 	return (0);
+}
+
+void	ft_case_two(t_pile *pile)
+{
+	if (pile->a[0] > pile->a[1])
+		sa(pile);
 }

@@ -2,7 +2,6 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <stdio.h>
-# include <unistd.h>
 # include "libft.h"
 # define LOW_INT -2147483648
 # define HIGHT_INT 2147483647
@@ -58,6 +57,8 @@ void	ft_print_pile(t_pile *pile);
 //case.c
 int		is_sort(t_pile *pile);
 int		ft_case(t_pile *pile);
+void	ft_case_sort(t_pile *pile, int flag);
+void	ft_case_two(t_pile *pile);
 //small_sort.c
 int		ft_small_sort(t_pile *pile);
 int		ft_medium_sort(t_pile *pile);
