@@ -55,3 +55,17 @@ void	ft_case_two(t_pile *pile)
 	if (pile->a[0] > pile->a[1])
 		sa(pile);
 }
+
+void	ft_sort_four(t_pile *pile)
+{
+	if (pile->b[0] == 0)
+		pa(pile);
+	else if (pile->b[0] == 1)
+		ft_four_one(pile);
+	else if (pile->b[0] == 2)
+		ft_four_two(pile);
+	else if (pile->b[0] == 3)
+		ft_four_three(pile);
+	else if (pile->b[0] == 4)
+		ft_four_four(pile);
+}

@@ -29,7 +29,7 @@ int		ft_is_double(int i, t_pile *pile);
 //sort.c
 void	ft_sort_tab(int *tab, int first, int last);
 void	ft_swap(int *tab, int i, int j);
-void	ft_dub_tab(t_pile *pile);
+void	ft_dub_tab(t_pile *pile, int *from, int *to);
 void	ft_convert_pile(t_pile *pile);
 //swap.c
 int		swap(int *tab, int l);
@@ -59,7 +59,20 @@ int		is_sort(t_pile *pile);
 int		ft_case(t_pile *pile);
 void	ft_case_sort(t_pile *pile, int flag);
 void	ft_case_two(t_pile *pile);
+void	ft_sort_four(t_pile *pile);
 //small_sort.c
 int		ft_small_sort(t_pile *pile);
 int		ft_medium_sort(t_pile *pile);
+//four.c
+void	ft_four_one(t_pile *pile);
+void	ft_four_two(t_pile *pile);
+void	ft_four_three(t_pile *pile);
+void	ft_four_four(t_pile *pile);
+//five.c
+void	ft_consecutive(t_pile *pile);
+void	ft_consecutive_two(t_pile *pile);
+void	ft_consecutive_three(t_pile *pile);
+void	ft_zero(t_pile *pile);
+void	ft_two(t_pile *pile);
+void	ft_three(t_pile *pile);
 #endif

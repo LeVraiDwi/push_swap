@@ -13,7 +13,8 @@ SRC_PATH = ./src
 SRC_NAME =	main.c check.c sort.c\
 			swap.c push.c rotate.c\
 			reverse_rotate.c radix.c\
-			case.c small_sort.c\
+			case.c small_sort.c four.c\
+			five.c five_b.c\
 
 LIBFT = ./libft/libft.a
 

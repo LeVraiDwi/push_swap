@@ -16,63 +16,16 @@ int	ft_small_sort(t_pile *pile)
 	return (1);
 }
 
-void	ft_reverse_pick(t_pile *pile)
+void	ft_sort_five(t_pile *pile)
 {
-	while (pile->a[0] != 0)
-	{
-		if (pile->a[0] == 1)
-			pb(pile);
-		else
-			ra(pile);
-	}
-}
-
-void	ft_pick(t_pile *pile)
-{
-	while (pile->a[0] != 0)
-	{
-		if (pile->a[0] == 1)
-			pb(pile);
-		else
-			rra(pile);
-	}
-}
-
-void	ft_rra_or_ra(t_pile *pile, int i)
-{
-	if (pile->lb != 0 && (pile->a[0] == pile->b[0] + 1
-			|| pile->a[pile->l - 1] == pile->b[0] - 1))
-	{
-		pa(pile);
-		if (pile->lb == 0 && i <= 2 && pile->b[0] >= 4)
-			while (!is_sort(pile))
-				rra(pile);
-	}
+	if (pile->b[0] == pile->b[1] + 1 || pile->b[0] == pile->b[1] - 1)
+		ft_consecutive(pile);
+	else if (pile->b[0] == 0 || pile->b[1] == 0)
+		ft_zero(pile);
+	else if (pile->b[0] == 1 || pile->b[1] == 1)
+		ft_two(pile);
 	else
-	{
-		i++;
-		ra(pile);
-	}
-}
-
-void	ft_brute_sort(t_pile *pile)
-{
-	int	i;
-
-	i = 0;
-	if (pile->b[0] == 0)
-		pa(pile);
-	else if (pile->lb == 2 && pile->b[1] == 0)
-	{
-		sb(pile);
-		pa(pile);
-	}
-	if (pile->lb == 2 && pile->b[0] < pile->b[1])
-		sb(pile);
-	while (!is_sort(pile) || pile->lb != 0)
-	{
-		ft_rra_or_ra(pile, i);
-	}
+		ft_three(pile);
 }
 
 int	ft_medium_sort(t_pile *pile)
@@ -81,6 +34,9 @@ int	ft_medium_sort(t_pile *pile)
 	if (pile->l == 4)
 		pb(pile);
 	ft_small_sort(pile);
-	ft_brute_sort(pile);
+	if (pile->lb == 1)
+		ft_sort_four(pile);
+	else
+		ft_sort_five(pile);
 	return (1);
 }

@@ -35,14 +35,14 @@ void	ft_sort_tab(int *tab, int first, int last)
 	}
 }
 
-void	ft_dub_tab(t_pile *pile)
+void	ft_dub_tab(t_pile *pile, int *from, int *to)
 {
 	int	i;
 
 	i = 0;
 	while (i < pile->l)
 	{
-		pile->b[i] = pile->a[i];
+		to[i] = from[i];
 		i++;
 	}
 	pile->lb = pile->l;
@@ -54,7 +54,7 @@ void	ft_convert_pile(t_pile *pile)
 	int	j;
 
 	i = 0;
-	ft_dub_tab(pile);
+	ft_dub_tab(pile, pile->a, pile->b);
 	ft_sort_tab(pile->b, 0, pile->l - 1);
 	while (i < pile->l)
 	{
