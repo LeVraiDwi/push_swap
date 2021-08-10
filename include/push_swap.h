@@ -1,7 +1,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 # include "libft.h"
 # define LOW_INT -2147483648
 # define HIGHT_INT 2147483647
