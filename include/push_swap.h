@@ -11,7 +11,7 @@
 # define CASE_FOUR 8
 # define CASE_FIVE 16
 
-typedef struct	s_pile
+typedef struct s_pile
 {
 	int	*a;
 	int	*b;
