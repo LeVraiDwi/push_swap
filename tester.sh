@@ -1,10 +1,10 @@
 #!/bin/bash
 echo "test1:"
-ARG=`cat num500`; ./push_swap $ARG | wc -l
+ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 ./push_swap $ARG | ./checker_linux $ARG
 
 echo "test2:"
-ARG=`cat num100`; ./push_swap $ARG | wc -l
+ARG=`ruby -e "puts (-250..249).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 ./push_swap $ARG | ./checker_linux $ARG
 
 echo "test3:"
